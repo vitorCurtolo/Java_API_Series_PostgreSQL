@@ -118,13 +118,19 @@ public class Serie {
 
     @Override
     public String toString() {
-        return "genero=" + genero +
-                ", titulo='" + titulo + '\'' +
-                ", totalTemporadas=" + totalTemporadas +
-                ", avaliacao=" + avaliacao +
-                ", atores='" + atores + '\'' +
-                ", poster='" + poster + '\'' +
-                ", sinopse='" + sinopse + '\'' +
-                ", episodio='" + episodios + '\'';
+        StringBuilder sb = new StringBuilder();
+        sb.append("===========================================\n");
+        sb.append("           Detalhes da Série                \n");
+        sb.append("===========================================\n");
+        sb.append(String.format("Gênero: %s\n", genero));
+        sb.append(String.format("Título: %s\n", titulo));
+        sb.append(String.format("Total de Temporadas: %s\n", totalTemporadas));
+        sb.append(String.format("Total de Episódios: %s\n", episodios.size()));
+        sb.append(String.format("Avaliação: %s\n", avaliacao));
+        sb.append(String.format("Atores: %s\n", atores));
+        sb.append(String.format("Poster: %s\n", poster));
+        sb.append(String.format("Sinopse: %s\n", sinopse));
+
+        return sb.toString();
     }
 }
